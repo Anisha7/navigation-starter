@@ -3,6 +3,11 @@ import { View, Text, StyleSheet } from 'react-native'
 import CustomButton from './CustomButton'
 
 class ClickerScreen extends Component {
+
+  static navigationOptions = {
+    title: "Clicker!"
+  }
+
   constructor(props) {
     super(props)
 
@@ -24,6 +29,11 @@ class ClickerScreen extends Component {
         <CustomButton 
           label="Click!"
           onPress={() => this.setState({ count: this.state.count + value })} 
+        />
+
+        <CustomButton
+          label="New Clicker"
+          onPress={() => navigation.navigate('Clicker', {value:1})}
         />
       </View>
     )
